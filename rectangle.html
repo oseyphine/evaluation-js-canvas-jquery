@@ -68,8 +68,8 @@
 
 //Action BOUTON 4 : faire disparaître le rectangle
 	bouton4.addEventListener('click', function() {
-		ctx.fillStyle="red";
-		ctx.fillRect(0, 0, largeur, hauteur);
+		ctx.clearRect(0, 0, canvas.width, canvas.height);
+
 	});
 //Action BOUTON 5 : faire réapparaitre le rectangle
 	bouton5.addEventListener('click', function() {
