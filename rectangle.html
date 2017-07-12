@@ -3,10 +3,80 @@
 <head>
 	<meta charset="utf-8">
 	<title>Rectangle by Joe</title>
+	<style type="text/css">
+	body{ 
+		text-align: center;
+		padding-top: 30px;
+	}
+	button{
+
+	}
+	</style>
 </head>
 <body>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript"></script>
+<button type="button" id="bouton1">Bouton 1</button>
+<button type="button" id="bouton2">Bouton 2</button>
+<button type="button" id="bouton3">Bouton 3</button>
+<button type="button" id="bouton4">Bouton 4</button>
+<button type="button" id="bouton5">Bouton 5</button>
+</br>
+<canvas id="canvas" width="300" height="300" style="background: red;"></canvas>
+
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>-->
+ <script type="text/javascript">
+//Appel de tous les objets du html
+	let bouton1 = document.querySelector('#bouton1');
+	let bouton2 = document.querySelector('#bouton2');
+	let bouton3 = document.querySelector('#bouton3');
+	let bouton4 = document.querySelector('#bouton4');
+	let bouton5 = document.querySelector('#bouton5');
+
+//Appel de l'objet canvas
+	let canvas = document.querySelector('#canvas');
+
+//Détermination des mesures
+	let largeur = canvas.height;
+	let hauteur = 10;
+//Dessine moi un rectangle
+	let ctx = canvas.getContext('2d');
+	ctx.beginPath();
+	ctx.fillStyle="blue";
+	ctx.fillRect(0, 0, largeur, hauteur);
+
+//Action BOUTON 1 : ajouter +10px ou revenir à 10px
+	bouton1.addEventListener('click', function() {
+
+		if(hauteur < canvas.height){
+			ctx.fillRect(0, 0, largeur, hauteur + 10);
+		} else{
+			hauteur = 10;
+		};  
+	});
+
+//Action BOUTON 2 : changer de couleur
+	bouton2.addEventListener('click', function() {
+		ctx.fillStyle="green";
+		ctx.fillRect(0, 0, largeur, hauteur);
+	});
+
+//Action BOUTON 3 : revenir à la couleur initiale
+	bouton3.addEventListener('click', function() {
+		ctx.fillStyle="blue";
+		ctx.fillRect(0, 0, largeur, hauteur);
+	});
+
+//Action BOUTON 4 : faire disparaître le rectangle
+	bouton4.addEventListener('click', function() {
+		ctx.fillStyle="red";
+		ctx.fillRect(0, 0, largeur, hauteur);
+	});
+//Action BOUTON 5 : faire réapparaitre le rectangle
+	bouton5.addEventListener('click', function() {
+		ctx.fillStyle="blue";
+		ctx.fillRect(0, 0, largeur, hauteur);
+	});
+
+</script>
 </body>
 </html>
