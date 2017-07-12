@@ -3,10 +3,84 @@
 <head>
 	<meta charset="utf-8">
 	<title>Menu by Joe</title>
+	<style type="text/css">
+		body{
+			text-align: center;
+			padding-top: 30px;
+		}
+		nav{
+			width: 800px;
+			margin: 0 auto;
+			background: black;
+		}
+		ul{
+			list-style-type:none;
+
+		}
+		ul li.main{
+			display: inline-block;
+			margin: 15px 30px 15px 10px;
+		}
+		ul li.sousmenu{
+			background: rgba(225 225 225 0.5);
+		}
+		ul li a{
+			text-decoration:none;
+			color: white;
+		}
+		ul li a:hover {
+ 			background-color:#D3D3D3;
+ 			} 
+	</style>
 </head>
 <body>
+<nav>
+	<ul>
+		<li class="main" id="menu-deroulant1"><a href="#">Menu 1</a>
+			<ul>
+				<li class="sousmenu sousmenu1"><a href="#">Level 1.1</a></li>
+				<li class="sousmenu sousmenu1"><a href="#">Level 1.2</a></li>
+				<li class="sousmenu sousmenu1"><a href="#">Level 1.3</a></li>
+				<li class="sousmenu sousmenu1"><a href="#">Level 1.4</a></li>
+			</ul>
+		</li>		
+		<li class="main" id="menu-deroulant2"><a href="#">Menu 2</a>
+			<ul>
+				<li class="sousmenu sousmenu2"><a href="#">Level 2.1</a></li>
+				<li class="sousmenu sousmenu2"><a href="#">Level 2.2</a></li>
+				<li class="sousmenu sousmenu2"><a href="#">Level 2.3</a></li>
+				<li class="sousmenu sousmenu2"><a href="#">Level 2.4</a></li>
+			</ul>
+		</li>
+		<li class="main" id="menu-deroulant3"><a href="#">Menu 3</a>
+			<ul>
+				<li class="sousmenu sousmenu3"><a href="#">Level 3.1</a></li>
+				<li class="sousmenu sousmenu3"><a href="#">Level 3.2</a></li>
+				<li class="sousmenu sousmenu3"><a href="#">Level 3.3</a></li>
+				<li class="sousmenu sousmenu3"><a href="#">Level 3.4</a></li>
+			</ul>
+		</li>	
+	</ul>
+</nav>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
-<script type="text/javascript"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('.sousmenu').hide();
+
+		$('#menu-deroulant1').click(function(){
+			$('.sousmenu1').toggle(100);
+		});
+
+		$('#menu-deroulant2').click(function(){
+			$('.sousmenu2').toggle(100);
+		});
+
+		$('#menu-deroulant3').click(function(){
+			$('.sousmenu3').toggle(100);
+		});
+
+	});
+</script>
 </body>
 </html>
