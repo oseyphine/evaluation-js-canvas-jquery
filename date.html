@@ -3,18 +3,38 @@
 <head>
 	<meta charset="utf-8">
 	<title>Date du jour by Joe</title>
+	<style type="text/css">
+		body{
+			text-align: center;
+			padding-top: 50px;
+			font-size: 50px;
+			color: gray;
+		}
+	</style>
 </head>
 <body>
 
-<p>Bienvenue, nous sommes le <span id="date">jeudi 13 juillet 2017</span>.</p>
+<p>Bienvenue, nous sommes le <span id="date"></span>.</p>
 
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script> -->
 <script type="text/javascript">
-	let jour = ;
-	let date = ;
-	let mois = ;
-	let annee = ;
-	
+//Détermination des variables qui réccupère l'objet HTML et la date du jour
+	let today = new Date();
+	let date = document.querySelector('#date');
+
+//Détermination des tableaux pour les jours de semaine et mois
+	let days = ["dimanche", "lundi", "mardi", "mercredi", "jeudi", "vendredi", "samedi"];
+	let months = ["janvier", "février", "mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre", "décembre"];
+
+//Réccupération du jour, de la date, du mois et de l'année
+	let day = today.getDay();
+	let number = today.getDate();
+	let month = today.getMonth();
+	let year = today.getFullYear();
+ 
+//Tada ! Modification de la phrase :)
+	date.innerHTML = days[day] + " " + number + " " + months[month] + " " + year;
+
 </script>
 </body>
 </html>
